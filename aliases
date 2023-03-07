@@ -1,0 +1,4 @@
+alias ssh='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
+alias sed='gsed'
+alias gosynology='ssh fonimus@192.168.1.12 -p 2229'
+alias gitclean='git checkout main && git pull && git branch | grep -v "main" | xargs git branch -D'
