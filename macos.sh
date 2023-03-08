@@ -59,11 +59,11 @@ sudo defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool t
 sudo defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
 
 # Disable press-and-hold for keys in favor of key repeat
-defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool true
 
 # Set a blazingly fast keyboard repeat rate
-defaults write NSGlobalDomain KeyRepeat -int 1
-defaults write NSGlobalDomain InitialKeyRepeat -int 10
+defaults write NSGlobalDomain KeyRepeat -int 5
+defaults write NSGlobalDomain InitialKeyRepeat -int 25
 
 # Set a quick trackpad
 defaults write NSGlobalDomain com.apple.trackpad.scaling -int 3
