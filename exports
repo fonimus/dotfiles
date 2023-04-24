@@ -33,3 +33,6 @@ export PATH=$HOME/Dev/apache-maven-3.8.6/bin:$PATH
 
 # BINARIES
 export PATH=/usr/local/sbin:$PATH
+
+# K9S
+export XDG_CONFIG_HOME=~/

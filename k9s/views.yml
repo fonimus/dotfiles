@@ -1,0 +1,18 @@
+k9s:
+  views:
+    v1/pods:
+      columns:
+        - 'NAME'
+        - 'AGE'
+#        - 'PF'
+        - 'READY'
+        - 'RESTARTS'
+        - 'STATUS'
+        - 'CPU'
+        - 'MEM'
+        - '%CPU/R'
+        - '%CPU/L'
+        - '%MEM/R'
+        - '%MEM/L'
+#        - 'IP'
+#        - 'NODE'
