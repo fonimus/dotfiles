@@ -10,6 +10,8 @@ k9s:
         - 'STATUS'
         - 'CPU'
         - 'MEM'
+        - 'CPU/R:L'
+        - 'MEM/R:L'
         - '%CPU/R'
         - '%CPU/L'
         - '%MEM/R'
