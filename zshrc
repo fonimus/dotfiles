@@ -22,7 +22,6 @@ antigen bundle chrissicool/zsh-256color
 antigen bundle tomsquest/nvm-auto-use.zsh
 
 antigen bundle macos
-antigen bundle dotenv
 antigen bundle yarn
 
 antigen apply
