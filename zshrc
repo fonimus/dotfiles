@@ -26,9 +26,6 @@ antigen bundle yarn
 
 antigen apply
 
-eval "$(pyenv init --path)"
-eval "$(direnv hook zsh)"
-
 [ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
 
 [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
