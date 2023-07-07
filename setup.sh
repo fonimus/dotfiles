@@ -40,6 +40,7 @@ mkdir -p $HOME/Dev
 
 create_link "$PWD/prefs/sublime-text.json" "$HOME/Library/Application Support/Sublime Text/Packages/User/Preferences.sublime-settings"
 create_link "$PWD/k9s/views.yml" "$HOME/k9s/views.yml"
+create_link "$PWD/k9s/plugin.yml" "$HOME/k9s/plugin.yml"
 create_link "$PWD/Brewfile" "$HOME/Brewfile"
 
 echo ""

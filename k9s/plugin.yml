@@ -1,0 +1,11 @@
+plugin:
+  pinologs:
+    shortCut: Ctrl-L
+    description: "attach (pretty)"
+    scopes:
+      - po
+    command: zsh
+    args:
+      - "-i"
+      - "-c"
+      - "kubectl logs -f $NAME -n $NAMESPACE --context $CONTEXT | npx pino-pretty -m message -i bu_code,dd,env,project_tangram,project_tangram_id,service,stream,context"
