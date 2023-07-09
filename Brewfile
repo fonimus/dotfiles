@@ -16,11 +16,12 @@ brew "jq"
 brew "k9s"
 brew "kubectx"
 brew "kubectl"
+brew "mas"
 brew "pure"
 brew "pyenv"
 
 cask "appcleaner"
-cask "brave-browser"
+cask "arc"
 cask "conduktor"
 cask "discord"
 cask "docker"
@@ -31,6 +32,7 @@ cask "iina"
 cask "intellij-idea"
 cask "kap"
 cask "mongodb-compass"
+cask "nordpass"
 cask "postman"
 cask "raycast"
 cask "rectangle"
@@ -41,3 +43,9 @@ cask "the-unarchiver"
 cask "vincelwt-chatgpt"
 cask "vlc"
 cask "warp"
+
+mas 'Xcode', id: 497799835
+mas 'WhatsApp Desktop', id: 1147396723
+mas 'myCANAL', id: 694580816
+mas 'Amazon Prime Video', id: 545519333
+mas 'Skitch', id: 425955336
