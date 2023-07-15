@@ -2,14 +2,32 @@
 
 set -euo pipefail
 
-print_success() {
-    # Print output in green
-    printf "\e[0;32m  [✔] %s\e[0m\n" "$1"
+print_color() {
+    printf "\e[0;$1m [$2] %s\e[0m\n" "$3"
 }
 
 print_info() {
-    # Print output in purple
-    printf "\e[0;35m %s\e[0m\n" "$1"
+    print_color "34" "." "$1"
+}
+
+print_success() {
+    print_color "32" "✔" "$1"
+}
+
+print_ignored() {
+    print_color "33" "✗" "$1"
+}
+
+ask() {
+    printf "\e[0;31m [?] %s\e[0m " "$1 (y/n)"
+    read -rp "" -n 1
+    printf "\n"
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        print_info "Launching $2"
+        eval $2
+    else
+      print_ignored "Skipping $2"
+    fi
 }
 
 create_link() {
@@ -19,8 +37,6 @@ create_link() {
     mkdir -p "$(dirname "$DEST")"
     if ! [ -L "$DEST" ] || [ "$FORCE" = true ]; then
         ln -isv "$SRC" "$DEST"
-    else
-        print_info "Skipping, symlink already exists: $DEST"
     fi
 }
 
@@ -32,35 +48,22 @@ fi
 declare -a FILES_TO_SYMLINK
 FILES_TO_SYMLINK=($(find . -type f -maxdepth 1 -not -name .DS_Store -not -name .gitignore -not -name README.md -not -name Brewfile -not -name "*.sh" | sed -e "s|./||"))
 
+print_info "Starting to initialize mac"
+
+print_info "Creating links..."
+
 for file in "${FILES_TO_SYMLINK[@]}"; do
     create_link "$PWD/$file" "$HOME/.$file"
 done
-
-mkdir -p $HOME/Dev
 
 create_link "$PWD/prefs/sublime-text.json" "$HOME/Library/Application Support/Sublime Text/Packages/User/Preferences.sublime-settings"
 create_link "$PWD/k9s/views.yml" "$HOME/k9s/views.yml"
 create_link "$PWD/k9s/plugin.yml" "$HOME/k9s/plugin.yml"
 create_link "$PWD/Brewfile" "$HOME/Brewfile"
 
-echo ""
-read -rp "Update OSX defaults? (y/n) " -n 1
-echo ""
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-    ./macos.sh
-fi
+print_info "Links created"
 
-echo ""
-read -rp "Install homebrew? (y/n) " -n 1
-echo ""
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-fi
+ask "Update OSX settings ?" ./macos.sh
+ask "Launch brew bundle ?" ./brew.sh
 
-echo ""
-read -rp "Launch brew bundle? (y/n) " -n 1
-echo ""
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-    brew bundle
-fi
-
+print_success "Mac initialized !"

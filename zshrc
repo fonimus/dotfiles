@@ -35,18 +35,3 @@ antigen apply
 [ -f "$GCLOUD_DIR/completion.zsh.inc" ] && source "$GCLOUD_DIR/completion.zsh.inc"
 
 source "$HOME/.antigen/bundles/lukechilds/zsh-better-npm-completion/zsh-better-npm-completion.plugin.zsh"
-
-# pure configuration -- start
-
-fpath+=("$(brew --prefix)/share/zsh/site-functions")
-autoload -U promptinit; promptinit
-
-PURE_CMD_MAX_EXEC_TIME=1
-
-zstyle :prompt:pure:path color cyan
-zstyle :prompt:pure:prompt:success color green
-zstyle :prompt:pure:git:stash show yes
-
-prompt pure
-
-# pure configuration -- end
