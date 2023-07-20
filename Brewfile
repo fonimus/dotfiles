@@ -16,6 +16,7 @@ brew "k9s"
 brew "kubectx"
 brew "kubectl"
 brew "mas"
+brew "nvm"
 brew "pure"
 brew "pyenv"
 

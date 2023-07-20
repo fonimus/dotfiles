@@ -65,8 +65,20 @@ defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool true
 defaults write NSGlobalDomain KeyRepeat -int 5
 defaults write NSGlobalDomain InitialKeyRepeat -int 25
 
-# Set a quick trackpad
-defaults write NSGlobalDomain com.apple.trackpad.scaling -int 3
+# Haptic feedback
+# 0: Light
+# 1: Medium
+# 2: Firm
+defaults write com.apple.AppleMultitouchTrackpad FirstClickThreshold -int 0
+defaults write com.apple.AppleMultitouchTrackpad SecondClickThreshold -int 0
+defaults write com.apple.AppleMultitouchTrackpad TrackpadFourFingerPinchGesture -int 2
+defaults write com.apple.AppleMultitouchTrackpad TrackpadFiveFingerPinchGesture -int 2
+defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerVertSwipeGesture -int 0
+
+# Tracking Speed
+# 0: Slow
+# 3: Fast
+defaults write NSGlobalDomain com.apple.trackpad.scaling -float 3.0
 
 # Use list view in all Finder windows by default
 # Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`
