@@ -155,6 +155,9 @@ defaults write com.apple.dock wvous-br-modifier -int 0
 
 defaults write com.apple.loginwindow AdminHostInfo HostName
 
+mv $HOME/Library/Preferences/com.apple.dock.plist $HOME/Library/Preferences/com.apple.dock.plist.BACKUP
+cp com.apple.dock.plist $HOME/Library/Preferences/com.apple.dock.plist
+
 for app in "Dock" "Finder"; do
     killall "${app}" &> /dev/null
 done

@@ -63,7 +63,7 @@ create_link "$PWD/Brewfile" "$HOME/Brewfile"
 
 print_info "Links created"
 
-ask "Update OSX settings ?" ./macos.sh
 ask "Launch brew bundle ?" ./brew.sh
+ask "Update OSX settings ?" ./macos.sh
 
 print_success "Mac initialized !"
