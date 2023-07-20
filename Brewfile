@@ -46,6 +46,4 @@ cask "warp"
 
 mas 'Xcode', id: 497799835
 mas 'WhatsApp Desktop', id: 1147396723
-mas 'myCANAL', id: 694580816
-mas 'Amazon Prime Video', id: 545519333
 mas 'Skitch', id: 425955336
