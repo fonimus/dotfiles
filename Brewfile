@@ -2,7 +2,6 @@ tap "mongodb/brew"
 tap "conduktor/brew"
 tap "homebrew/bundle"
 tap "homebrew/cask"
-tap "homebrew/cask-drivers"
 
 brew "antigen"
 brew "mongodb-community"
