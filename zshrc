@@ -8,6 +8,15 @@ for file in $HOME/.{aliases,exports,functions}; do
 done
 unset file
 
+[ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
+
+[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"
+
+[ -f "$GCLOUD_DIR/path.zsh.inc" ] && source "$GCLOUD_DIR/path.zsh.inc"
+[ -f "$GCLOUD_DIR/completion.zsh.inc" ] && source "$GCLOUD_DIR/completion.zsh.inc"
+
+
 antigen bundle git
 antigen bundle sudo
 antigen bundle z
@@ -19,20 +28,11 @@ antigen bundle history-substring-search
 
 antigen bundle lukechilds/zsh-better-npm-completion
 antigen bundle chrissicool/zsh-256color
-antigen bundle tomsquest/nvm-auto-use.zsh
 
 antigen bundle macos
 antigen bundle yarn
 
 antigen apply
-
-[ -f "$HOME/.fzf.zsh" ] && source "$HOME/.fzf.zsh"
-
-[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"
-
-[ -f "$GCLOUD_DIR/path.zsh.inc" ] && source "$GCLOUD_DIR/path.zsh.inc"
-[ -f "$GCLOUD_DIR/completion.zsh.inc" ] && source "$GCLOUD_DIR/completion.zsh.inc"
 
 source "$HOME/.antigen/bundles/lukechilds/zsh-better-npm-completion/zsh-better-npm-completion.plugin.zsh"
 
@@ -50,3 +50,24 @@ zstyle :prompt:pure:git:stash show yes
 prompt pure
 
 # pure configuration -- end
+
+autoload -U add-zsh-hook
+load-nvmrc() {
+  local node_version="$(nvm version)"
+  local nvmrc_path="$(nvm_find_nvmrc)"
+
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+      nvm install
+    elif [ "$nvmrc_node_version" != "$node_version" ]; then
+      nvm use
+    fi
+  elif [ "$node_version" != "$(nvm version default)" ]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+  fi
+}
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
