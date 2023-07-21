@@ -4,8 +4,7 @@
 
 ```shell
 mkdir -p $HOME/Dev
-# clone or download zip from github
-git clone https://github.com/fonimus/dotfiles $HOME/Dev/dotfiles
+# download zip from github
 cd $HOME/Dev/dotfiles
 ./setup.sh
 ```
