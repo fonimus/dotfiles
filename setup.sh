@@ -56,9 +56,15 @@ for file in "${FILES_TO_SYMLINK[@]}"; do
 done
 
 create_link "$PWD/prefs/sublime-text.json" "$HOME/Library/Application Support/Sublime Text/Packages/User/Preferences.sublime-settings"
+
 create_link "$PWD/k9s/views.yml" "$HOME/k9s/views.yml"
 create_link "$PWD/k9s/plugin.yml" "$HOME/k9s/plugin.yml"
+
+create_link "$PWD/warp/keybindings.yaml" "$HOME/.warp/keybindings.yaml"
+create_link "$PWD/warp/launch_configurations/split-by-4.yaml" "$HOME/.warp/launch_configurations/split-by-4.yaml"
+
 create_link "$PWD/Brewfile" "$HOME/Brewfile"
+
 create_link "$PWD/ssh/config" "$HOME/.ssh/config"
 
 print_info "Links created"
