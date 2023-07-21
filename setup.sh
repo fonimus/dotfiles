@@ -46,7 +46,7 @@ if [ "$#" -gt 0 ] && { [ "$1" == "--force" ] || [ "$1" == "-f" ]; }; then
 fi
 
 declare -a FILES_TO_SYMLINK
-FILES_TO_SYMLINK=($(find . -type f -maxdepth 1 -not -name .DS_Store -not -name .gitignore -not -name README.md -not -name Brewfile -not -name "*.sh" | sed -e "s|./||"))
+FILES_TO_SYMLINK=($(find . -type f -maxdepth 1 -not -name .DS_Store -not -name .gitignore -not -name README.md -not -name Brewfile -not -name "*.sh" -not -name "*.plist" | sed -e "s|./||"))
 
 print_info "Starting to initialize mac"
 
