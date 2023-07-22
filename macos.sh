@@ -170,6 +170,11 @@ defaults write com.apple.loginwindow AdminHostInfo HostName
 mv $HOME/Library/Preferences/com.apple.dock.plist $HOME/Library/Preferences/com.apple.dock.plist.BACKUP
 cp com.apple.dock.plist $HOME/Library/Preferences/com.apple.dock.plist
 
+EXTENSIONS=(txt yml xml sh properties json js java ts kt css)
+for extension in "${EXTENSIONS[@]}"; do
+    duti -s com.sublimetext.4 $extension all
+done
+
 for app in "Dock" "Finder"; do
     killall "${app}" &> /dev/null
 done

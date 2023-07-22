@@ -25,7 +25,8 @@
 name: Split-by-4
 windows:
   - tabs:
-      - layout:
+      - title: Split 4
+        layout:
           split_direction: horizontal
           panes:
             - split_direction: vertical
