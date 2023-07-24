@@ -23,6 +23,7 @@ brew "nvm"
 brew "pinentry-mac"
 brew "pure"
 brew "pyenv"
+brew "vault"
 
 cask "appcleaner"
 cask "arc"
