@@ -36,3 +36,6 @@ export PATH=/usr/local/sbin:$PATH
 
 # K9S
 export XDG_CONFIG_HOME=~/
+
+# GPG
+export GPG_TTY=$(tty)
