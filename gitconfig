@@ -1,6 +1,13 @@
 [user]
   name = François Onimus
   email = francois.onimus@gmail.com
+  signingkey = 668567B4458A506E
+
+[commit]
+	gpgsign = true
+
+[gpg]
+	program = /opt/homebrew/bin/gpg
 
 [core]
   pager = diff-so-fancy | less
