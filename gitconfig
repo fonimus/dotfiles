@@ -7,7 +7,7 @@
 	gpgsign = true
 
 [gpg]
-	program = /opt/homebrew/bin/gpg
+	program = gpg
 
 [core]
   pager = diff-so-fancy | less

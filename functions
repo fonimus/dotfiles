@@ -2,8 +2,8 @@ function dockerstopremoveall() {
     docker ps -a -q | xargs docker stop && docker ps -a -q | xargs docker rm
 }
 function mongoStart() {
-    brew services start mongodb-community@6.0
+    brew services start mongodb-community
 }
 function mongoStop() {
-    brew services stop mongodb-community@6.0
+    brew services stop mongodb-community
 }

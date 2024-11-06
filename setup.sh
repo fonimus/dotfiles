@@ -72,4 +72,7 @@ print_info "Links created"
 ask "Launch brew bundle ?" ./brew.sh
 ask "Update OSX settings ?" ./macos.sh
 
+curl -o $HOME/Dev/google-java-format.jar https://github.com/google/google-java-format/releases/download/v1.24.0/google-java-format.jar
+echo "pinentry-program $(brew --prefix)/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
+
 print_success "Mac initialized !"
