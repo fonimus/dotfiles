@@ -27,7 +27,6 @@ brew "pinentry-mac"
 brew "pure"
 brew "pyenv"
 brew "scc"
-brew "vault"
 brew "wget"
 
 cask "appcleaner"
