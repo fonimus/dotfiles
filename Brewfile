@@ -55,7 +55,7 @@ cask "the-unarchiver"
 cask "vincelwt-chatgpt"
 cask "vlc"
 cask "warp"
+cask "whatsapp"
 
 mas 'F5Access', id: 1243219105
-mas 'WhatsApp Desktop', id: 1147396723
 mas 'Xcode', id: 497799835
