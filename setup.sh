@@ -74,5 +74,7 @@ ask "Update OSX settings ?" ./macos.sh
 
 curl -o $HOME/Dev/google-java-format.jar https://github.com/google/google-java-format/releases/download/v1.24.0/google-java-format.jar
 echo "pinentry-program $(brew --prefix)/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
+eval "$(ssh-agent -s)"
+ssh-add --apple-use-keychain ~/.ssh/github_rsa
 
 print_success "Mac initialized !"
