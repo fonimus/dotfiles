@@ -3,6 +3,7 @@ tap "homebrew/bundle"
 
 brew "antigen"
 brew "diff-so-fancy"
+brew "direnv"
 brew "duti"
 brew "exiftool"
 brew "fzf"
