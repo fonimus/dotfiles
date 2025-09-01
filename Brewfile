@@ -27,6 +27,7 @@ brew "pure"
 brew "pyenv"
 brew "scc"
 brew "wget"
+brew "yarn"
 
 cask "appcleaner"
 cask "arc"

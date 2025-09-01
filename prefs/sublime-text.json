@@ -7,7 +7,6 @@
   "trim_automatic_white_space": true,
   "trim_trailing_white_space_on_save": true,
   "ignored_packages": [
-    "Compare Side-By-Side",
     "Vintage",
   ],
   "index_files": true,
